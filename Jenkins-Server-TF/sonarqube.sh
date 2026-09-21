@@ -14,9 +14,15 @@ apt install -y docker.io
 
 systemctl enable docker
 systemctl start docker
-sudo usermod -aG docker $USER && newgrp docker
+
+sudo usermod -aG docker ubuntu
+sudo usermod -aG docker jenkins
+sudo usermod -aG docker docker 
+
 
 docker run -d \
 --name sonarqube \
 -p 9000:9000 \
 sonarqube:lts-community
+hostname
+id

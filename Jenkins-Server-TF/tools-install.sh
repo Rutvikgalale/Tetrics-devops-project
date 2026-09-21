@@ -13,7 +13,8 @@ wget -O /etc/apt/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stab
 
 echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 
-
+hostname
+id
 apt update -y
 apt install -y jenkins
 
@@ -27,6 +28,7 @@ systemctl enable docker
 systemctl start docker
 
 usermod -aG docker ubuntu
+usermod -aG docker docker
 usermod -aG docker jenkins
 
 chmod 666 /var/run/docker.sock
