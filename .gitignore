@@ -1,0 +1,5 @@
+assets/
+README.md
+Jenkins-Server-TF/awscliv2.zip
+.terraform*
+Jenkins-Server-TF/aws
