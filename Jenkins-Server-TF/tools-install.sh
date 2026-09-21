@@ -7,6 +7,14 @@ apt update -y
 apt install -y fontconfig openjdk-21-jre
 java -version
 
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+echo "/swapfile none swap sw 0 0" | sudo tee -a /etc/fstab
+sudo mount -a
+free -h
+
 # Install Jenkins
 mkdir -p /etc/apt/keyrings
 wget -O /etc/apt/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
