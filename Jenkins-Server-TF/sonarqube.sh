@@ -14,6 +14,7 @@ apt install -y docker.io
 
 systemctl enable docker
 systemctl start docker
+sudo usermod -aG docker $USER && newgrp docker
 
 docker run -d \
 --name sonarqube \
